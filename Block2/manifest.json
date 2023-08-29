@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Block 2",
+  "version": "99999",
+  "description": "Block ads and Trackers Maybe ??!",
+  "permissions": [
+    "webRequest",
+    "activeTab",
+    "<all_urls>",
+    "declarativeNetRequest"
+  ],
+  "background": {
+    "service_worker": "scripts/background2.js"
+  },
+  "icons": {
+    "128": "logo_128x128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

@@ -1,21 +1,12 @@
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.declarativeNetRequest.updateDynamicRules({
-        removeRuleIds: ["block_facebook"]
-    });
+//Let's interfere some stuff bruh
 
-    chrome.declarativeNetRequest.updateDynamicRules({
-        addRules: [
-            {
-                id: "block_facebook",
-                priority: 1,
-                action: {
-                    type: "block"
-                },
-                condition: {
-                    urlFilter: "*://facebook.com/*"
-                }
-            }
-        ],
-        removeRuleIds: []
-    });
+chrome.runtime.onInstalled.addListener(() => {
+    fetch(chrome.runtime.getURL('rules.json'))
+        .then(response => response.json())
+        .then(rules => {
+            chrome.declarativeNetRequest.updateDynamicRules({
+                addRules: rules,
+                removeRuleIds: []
+            });
+        });
 });
