@@ -4,7 +4,7 @@ import fs from "fs";
 // const fs = require('fs');
 
 const adGuardUrl = 'https://raw.githubusercontent.com/blocklistproject/Lists/master/adguard/ads-ags.txt';
-const outputFilename = 'C:\\Users\\Admin\\WebstormProjects\\Ad Blocker\\Block2\\scripts\\rules.json';
+const fileToBeCreated = 'C:\\Users\\Admin\\WebstormProjects\\Ad Blocker\\Anzen-sei\\scripts\\rules.json';
 
 const convertAdGuardToDeclarativeNetRequest = (line, id) => {
 
@@ -52,4 +52,4 @@ const convertAdGuardFileToDeclarativeNetRequestFile = async (url, filename) => {
     }
 };
 
-convertAdGuardFileToDeclarativeNetRequestFile(adGuardUrl, outputFilename);
+convertAdGuardFileToDeclarativeNetRequestFile(adGuardUrl, fileToBeCreated);

@@ -33,12 +33,7 @@
       {
         "id": "ruleset_1",
         "enabled": true,
-        "path": "scripts/rules.json"
-      },
-      {
-        "id": "ruleset_2",
-        "enabled": true,
-        "path": "domain.json"
+        "path": "Json/rules.json"
       }
     ]
   }
